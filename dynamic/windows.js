@@ -963,5 +963,5 @@ window.onload = function () {
             </div>
         </div>
     </div>`;
-	document.querySelector('#placeholder').appendChild(winSTR);
+	document.querySelector('#placeholders').appendChild(winSTR);
 };
