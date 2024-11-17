@@ -653,3 +653,13 @@ function initTableSearch(sid,id,data=[]){
     });
     
 }
+
+const formDataToJSON = (f) => {
+	var object = {};
+	f.forEach(function(value, key) {
+		object[key] = value;
+	});
+	// var json = JSON.stringify(object);
+	return object;
+
+};
