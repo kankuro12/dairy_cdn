@@ -964,7 +964,7 @@ window.onload = function () {
 			<div class="w-100 working-title" id="yyy_123">
 				asdfasd
 			</div>
-			<img src="{{asset('backend/images/cude_loader.svg')}}" alt="">
+			<img src="https://cdn-dairy-co.com/static/img/cude_loader.svg" alt="">
 		</div>
 	</div>
 	`;
