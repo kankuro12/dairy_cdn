@@ -1,48 +1,4 @@
-var win = {
-    id: "#window",
-    shown: false,
-    show: (title, text) => {
-        $('#wt').html(title);
-        $('#wc').html(text);
-        $(win.id).addClass('shown');
-        win.shown = true;
-        console.log(win);
-    },
-    showGet: (title, URL, callback) => {
-        $('#wt').html(title);
-        axios.get(URL)
-            .then((res) => {
-                $('#wc').html(res.data);
-                $(win.id).addClass('shown');
-                win.shown = true;
-                if (callback != undefined) {
-                    callback();
-                }
-            });
 
-        console.log(win);
-    },
-    showPost: (title, URL, data, callback) => {
-        $('#wt').html(title);
-        axios.post(URL, data)
-            .then((res) => {
-                $('#wc').html(res.data);
-                $(win.id).addClass('shown');
-                win.shown = true;
-                if (callback != undefined) {
-                    callback();
-                }
-            });
-
-        console.log(win);
-    },
-    hide: () => {
-        $('#wc').html("");
-        $(win.id).removeClass('shown');
-        win.shown = false;
-        console.log(win);
-    }
-};
 
 /*
 * Project: Bootstrap Notify = v3.1.3
@@ -398,7 +354,6 @@ var win = {
 
 }));
 
-function showNotification(a,t,n,e,s,i){(null===a||""===a)&&(a="bg-black"),(null===t||""===t)&&(t="Turning standard Bootstrap alerts"),(null===s||""===s)&&(s="animated fadeInDown"),(null===i||""===i)&&(i="animated fadeOutUp"),$.notify({message:t},{type:a,allow_dismiss:!0,newest_on_top:!0,timer:500,placement:{from:n,align:e},animate:{enter:s,exit:i},template:'<div data-notify="container" class="bootstrap-notify-container alert alert-dismissible {0} " role="alert"><button type="button" aria-hidden="true" class="close" data-notify="dismiss">\xd7</button><span data-notify="icon"></span> <span data-notify="title">{1}</span> <span data-notify="message">{2}</span><div class="progress" data-notify="progressbar"><div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div><a href="{3}" target="{4}" data-notify="url"></a></div>'})}
 
 /*jslint browser: true*/
 /*jslint jquery: true*/
@@ -604,6 +559,56 @@ function showNotification(a,t,n,e,s,i){(null===a||""===a)&&(a="bg-black"),(null=
     });
   
   })(jQuery || this.jQuery || window.jQuery);
+
+//XXXX Extra Functions
+  var win = {
+    id: "#window",
+    shown: false,
+    show: (title, text) => {
+        $('#wt').html(title);
+        $('#wc').html(text);
+        $(win.id).addClass('shown');
+        win.shown = true;
+        console.log(win);
+    },
+    showGet: (title, URL, callback) => {
+        $('#wt').html(title);
+        axios.get(URL)
+            .then((res) => {
+                $('#wc').html(res.data);
+                $(win.id).addClass('shown');
+                win.shown = true;
+                if (callback != undefined) {
+                    callback();
+                }
+            });
+
+        console.log(win);
+    },
+    showPost: (title, URL, data, callback) => {
+        $('#wt').html(title);
+        axios.post(URL, data)
+            .then((res) => {
+                $('#wc').html(res.data);
+                $(win.id).addClass('shown');
+                win.shown = true;
+                if (callback != undefined) {
+                    callback();
+                }
+            });
+
+        console.log(win);
+    },
+    hide: () => {
+        $('#wc').html("");
+        $(win.id).removeClass('shown');
+        win.shown = false;
+        console.log(win);
+    }
+};
+
+function showNotification(a,t,n,e,s,i){(null===a||""===a)&&(a="bg-black"),(null===t||""===t)&&(t="Turning standard Bootstrap alerts"),(null===s||""===s)&&(s="animated fadeInDown"),(null===i||""===i)&&(i="animated fadeOutUp"),$.notify({message:t},{type:a,allow_dismiss:!0,newest_on_top:!0,timer:500,placement:{from:n,align:e},animate:{enter:s,exit:i},template:'<div data-notify="container" class="bootstrap-notify-container alert alert-dismissible {0} " role="alert"><button type="button" aria-hidden="true" class="close" data-notify="dismiss">\xd7</button><span data-notify="icon"></span> <span data-notify="title">{1}</span> <span data-notify="message">{2}</span><div class="progress" data-notify="progressbar"><div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div><a href="{3}" target="{4}" data-notify="url"></a></div>'})}
+
   
   function errAlert($err, $msg = "") {
 	hideProgress();
@@ -625,6 +630,7 @@ function yes(msg = '') {
 	return prompt(msg) == 'yes';
 }
 
+//XXX table management
 var tablecount=0;
     
 function initTableSearch(sid,id,data=[]){
@@ -654,6 +660,8 @@ function initTableSearch(sid,id,data=[]){
     
 }
 
+//XXX Form Management 
+
 const formDataToJSON = (f) => {
 	var object = {};
 	f.forEach(function(value, key) {
@@ -663,3 +671,74 @@ const formDataToJSON = (f) => {
 	return object;
 
 };
+
+
+//XXX language codes
+const npNUM = (selectors) => {
+	const replaceMap = [
+		["1", '१'],
+		["2", '२'],
+		["3", '३'],
+		["4", '४'],
+		["5", '५'],
+		["6", '६'],
+		["7", '७'],
+		["8", '८'],
+		["9", '९'],
+		["0", '०'],
+
+	];
+
+	$(selectors).each(function(index, ele) {
+		replaceMap.forEach(m => {
+			ele.innerHTML = ele.innerHTML.replaceAll(m[0], m[1]);
+		});
+	});
+}
+
+const npNUM1 = (selectors) => {
+	const replaceMap = [
+		["1", '१'],
+		["2", '२'],
+		["3", '३'],
+		["4", '४'],
+		["5", '५'],
+		["6", '६'],
+		["7", '७'],
+		["8", '८'],
+		["9", '९'],
+		["0", '०'],
+	];
+
+	const regex = new RegExp(replaceMap.map(([num]) => num).join("|"), "g");
+
+	$(selectors).each(function(index, ele) {
+		ele.innerHTML = ele.innerHTML.replace(regex, (match) => {
+			const replacement = replaceMap.find(([num]) => num === match);
+			return replacement ? replacement[1] : match;
+		});
+	});
+};
+
+const tonpNUM=(num)=>{
+	num= `${num}`;
+	const replaceMap = [
+		["1", '१'],
+		["2", '२'],
+		["3", '३'],
+		["4", '४'],
+		["5", '५'],
+		["6", '६'],
+		["7", '७'],
+		["8", '८'],
+		["9", '९'],
+		["0", '०'],
+	];
+
+	const regex = new RegExp(replaceMap.map(([num]) => num).join("|"), "g");
+
+	return num.replace(regex, (match) => {
+			const replacement = replaceMap.find(([num]) => num === match);
+			return replacement ? replacement[1] : match;
+	});
+}
