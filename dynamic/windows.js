@@ -560,8 +560,8 @@
   
   })(jQuery || this.jQuery || window.jQuery);
 
-//XXXX Extra Functions
-  var win = {
+//XXX Data loaders
+var win = {
     id: "#window",
     shown: false,
     show: (title, text) => {
@@ -607,6 +607,77 @@
     }
 };
 
+
+function loadInDiv(ele, e, id, callback) {
+	e.preventDefault();
+	showProgress('Loading Data');
+	axios.post(ele.action, new FormData(ele))
+		.then((res) => {
+			$('#' + id).html(res.data);
+			successAlert('Data loaded successfully');
+			if (locale == 'np') {
+				npNUM('.cno');
+			}
+
+			if (callback != undefined) {
+				callback();
+			}
+		})
+		.catch((err) => {
+			errAlert(err);
+		});
+}
+
+
+function openPostWindow(url, data) {
+
+
+	var form = document.createElement('form');
+	form.setAttribute('method', 'POST');
+	form.setAttribute('action', url);
+
+	for (var key in data) {
+		if (data.hasOwnProperty(key)) {
+			var input = document.createElement('input');
+			input.setAttribute('type', 'hidden');
+			input.setAttribute('name', key);
+			input.setAttribute('value', data[key]);
+			form.appendChild(input);
+		}
+	}
+
+	var windowName = '_blank'; // Open in a new tab or window
+	var newWindow = window.open('', windowName,"noopener");
+
+	form.target = windowName;
+	newWindow.document.body.appendChild(form);
+	form.submit();
+}
+
+//end data loaders
+
+
+//XXXX Extra Functions
+function deepFreeze(object) {
+	// Retrieve the property names defined on object
+	const propNames = Reflect.ownKeys(object);
+
+	// Freeze properties before freezing self
+	for (const name of propNames) {
+		const value = object[name];
+
+		if ((value && typeof value === "object") || typeof value === "function") {
+			deepFreeze(value);
+		}
+	}
+
+	return Object.freeze(object);
+}
+
+function padZero(num, length = 5) {
+	return String(num).padStart(length, "0")
+}
+
 function showNotification(a,t,n,e,s,i){(null===a||""===a)&&(a="bg-black"),(null===t||""===t)&&(t="Turning standard Bootstrap alerts"),(null===s||""===s)&&(s="animated fadeInDown"),(null===i||""===i)&&(i="animated fadeOutUp"),$.notify({message:t},{type:a,allow_dismiss:!0,newest_on_top:!0,timer:500,placement:{from:n,align:e},animate:{enter:s,exit:i},template:'<div data-notify="container" class="bootstrap-notify-container alert alert-dismissible {0} " role="alert"><button type="button" aria-hidden="true" class="close" data-notify="dismiss">\xd7</button><span data-notify="icon"></span> <span data-notify="title">{1}</span> <span data-notify="message">{2}</span><div class="progress" data-notify="progressbar"><div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div><a href="{3}" target="{4}" data-notify="url"></a></div>'})}
 
   
@@ -629,6 +700,8 @@ function yes(msg = '') {
 	}
 	return prompt(msg) == 'yes';
 }
+
+//end extra functions
 
 //XXX table management
 var tablecount=0;
@@ -947,6 +1020,236 @@ function loadXPayEdit(id, identifire) {
 }
 window.addEventListener('load', addXPayHandle, true);
 //end xpayjs
+
+//start csv
+function getCSV(t) {
+	return new Promise((e, n) => {
+		let r = new FileReader;
+		r.addEventListener("load", function(t) {
+			let n = t.target.result;
+			e(n.split("\n").map(t => t.trim()).filter(t => t.length > 0).map(t => t.split(",").map(
+				t => t.trim())))
+		}), r.addEventListener("error", t => {
+			n(t)
+		}), r.readAsText(t, '"UTF-8"')
+	})
+}
+
+
+function exportCSV(titles, name) {
+	let pom = document.createElement('a');
+	let csvContent = titles; //here we load our csv data
+	let blob = new Blob([csvContent], {
+		type: 'text/csv;charset=utf-8;'
+	});
+	let url = URL.createObjectURL(blob);
+	pom.href = url;
+	pom.setAttribute('download', name + '.csv');
+	pom.click();
+}
+//end csv
+
+//element switch
+
+function switchRequired(ele, selector) {
+	if (ele.checked) {
+		$(selector).attr('required', 'selector');
+	} else {
+		$(selector).removeAttr('required');
+	}
+}
+
+function switchEle(val, id) {
+	if (val) {
+		$('#' + id).removeClass('d-none');
+	} else {
+		$('#' + id).addClass('d-none');
+
+	}
+}
+
+function switchInput(data, id, required = false) {
+	if (data) {
+		$('#' + id + "_holder").removeClass('d-none');
+		if (required) {
+			$('#' + id).attr('required', 'required');
+		}
+	} else {
+		$('#' + id + "_holder").addClass('d-none');
+		if (required) {
+			$('#' + id).removeAttr('required');
+		}
+
+	}
+}
+function selectReport($i) {
+	$('.report_selector').removeClass('btn-primary');
+	$('#report_selector_' + $i).addClass('btn-primary');
+	$('.report_holder').removeClass('selected');
+	$('.report_holder_' + $i).addClass('selected');
+
+}
+//end element switch
+
+//date mamangement
+const getToday = () => {
+	return NepaliFunctions.GetCurrentBsYear() +
+		"-" +
+		(month < 10 ? "0" + month : month) +
+		"-" +
+		(day < 10 ? "0" + day : day);
+};
+const getTodayInt = () => {
+	return NepaliFunctions.GetCurrentBsYear() +
+		"" +
+		(month < 10 ? "0" + month : month) +
+		"" +
+		(day < 10 ? "0" + day : day);
+};
+
+function nepaliDateParts(e, n = null) {
+	if (null === e) return {
+		year: null,
+		month: null,
+		day: null,
+		dm: null
+	};
+	const t = Math.floor(e / 1e4);
+	e %= 1e4;
+	const r = Math.floor(e / 100);
+	const a = e % 100;
+	return {
+		year: t,
+		month: r,
+		day: a,
+		dm: 100 * t + r
+	}
+}
+
+function dateParts(date) {
+	let data = {};
+	data.year = Math.floor(date / 10000);
+	date = date % 10000;
+	data.month = Math.floor(date / 100);
+	data.day = date % 100;
+	if (data.day < 16) {
+		data.session = 1;
+	} else {
+		data.session = 2;
+	}
+	return data;
+}
+
+function toNepaliDate(d) {
+	if (d) {
+		const year = parseInt(d / 10000);
+		let _d = d % 10000;
+		const month = parseInt(_d / 100);
+		_d = _d % 100;
+		return '' + year + '-' + (month < 10 ? '0' + month : month) + '-' + (_d < 10 ? ('0' + _d) : _d);
+	} else {
+		return "";
+	}
+
+}
+
+function partToNepaliDate(d,type="str") {
+	if (d) {
+	  if(type=='str'){
+		  return '' + d[0] + '-' + (d[1] < 10 ? '0' + d[1] : d[1]) + '-' + (d[2] < 10 ? ('0' + d[2]) : d[2]);
+	  }else{
+		return parseInt('' + d[0] + '' + (d[1] < 10 ? '0' + d[1] : d[1]) + '' + (d[2] < 10 ? ('0' + d[2]) : d[2]));
+	  }
+	} else {
+		return "";
+	}
+
+}
+
+function getNepalidate(engDate,is_int=false,in_int=true){
+	let parts=[];
+	if(!is_int){
+		parts=engDate.split("-");
+	}else{
+		parts[0] = parseInt(engDate / 10000);
+		let _d = engDate % 10000;
+		parts[1] = parseInt(_d / 100);
+		parts[2] = _d % 100;
+	}
+
+	const d=NepaliFunctions.AD2BS({year:parts[0],month:parts[1],day:parts[2]});
+	if(in_int){
+		return parseInt(`${d.year}${d.month<10? '0'+d.month:d.month}${d.day<10? '0'+d.day:d.day}`);
+
+	}else{
+		return d;
+	}
+
+
+}
+
+const nepaliDateDiff = (start, end) => {
+	const startArr = start.split("-");
+	const startObj = {
+		year: startArr[0],
+		month: startArr[1],
+		day: startArr[2],
+	};
+
+	const endArr = end.split("-");
+	const endObj = {
+		year: endArr[0],
+		month: endArr[1],
+		day: endArr[2],
+	};
+
+
+
+	let days = (NepaliFunctions.BsDatesDiff(endObj, startObj));
+
+	const startInt=parseInt(start.replaceAll('-',''));
+	const endInt=parseInt(end.replaceAll('-',''));
+
+	if (startInt > endInt) {
+		days = -1 * days;
+	}
+	return days;
+}
+
+function nextDayNep(date){
+	let [y,m,d]=(toNepaliDate(date)).split('-').map(Number);
+	const lastDay=NepaliFunctions.GetDaysInBsMonth(y,m);
+	d+=1;
+	if(d>lastDay){
+		m+=1;
+		d=1;
+		if(m>12){
+			m=1;
+			y+=1;
+		}
+	}
+
+	return 10000*y+m*100+d;
+}
+
+function prevDayNep(date){
+	let [y,m,d]=(toNepaliDate(date)).split('-').map(Number);
+	const lastDay=NepaliFunctions.GetDaysInBsMonth(y,m);
+	d-=1;
+	if(d<1){
+		m-=1;
+		if(m<1){
+			m=12;
+			y-=1;
+		}
+		d=NepaliFunctions.GetDaysInBsMonth(y,m);
+	}
+	return 10000*y+m*100+d;
+}
+
+
+//end data management
+
 window.onload = function () {
 	const winSTR = `
 	<div class="window" id="window">
