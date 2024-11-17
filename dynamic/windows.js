@@ -948,20 +948,19 @@ function loadXPayEdit(id, identifire) {
 window.addEventListener('load', addXPayHandle, true);
 //end xpayjs
 window.onload = function () {
-	const winSTR=`<div class="window " id="window">
-        <div class="inner-window">
-            <div class="top-bar">
-                <span id="wt">
+	const winSTR = `
+	<div class="window" id="window">
+		<div class="inner-window">
+		<div class="top-bar">
+			<span id="wt"></span>
+			<span id="wcc" onclick="win.hide()">close</span>
+		</div>
+		<div class="content" id="wc"></div>
+		</div>
+	</div>`;
 
-                </span>
-                <span id="wcc" onclick="win.hide()">
-                    close
-                </span>
-            </div>
-            <div class="content" id="wc">
-
-            </div>
-        </div>
-    </div>`;
-	document.querySelector('#placeholders').appendChild(winSTR);
+	const placeholders = document.querySelector('#placeholders');
+	if (placeholders) {
+	placeholders.insertAdjacentHTML('beforeend', winSTR);
+	}
 };
