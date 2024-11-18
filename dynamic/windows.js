@@ -1247,6 +1247,8 @@ function prevDayNep(date){
 	return 10000*y+m*100+d;
 }
 
+function initCalenderDate(e){let l=NepaliFunctions.GetCurrentBsYear()+"-"+(month<10?"0"+month:month)+"-"+(day<10?"0"+day:day);if((""==this.value||void 0==this.value)&&$(this).val(l),$("#"+e).hasClass("nolimit"))$("#"+e).nepaliDatePicker();else if($("#"+e).nepaliDatePicker(),xdayclose){if($("#"+e).hasClass("report"))$("#"+e).nepaliDatePicker({disableAfter:l});else if($("#"+e).val(l),null==lastClosedDate)$("#"+e).nepaliDatePicker({disableBefore:l});else{let a=`${lastClosedDate}`,i=a.slice(0,4)+"-"+a.slice(4,6)+"-"+a.slice(6),[t,s,r]=i.split("-").map(Number),n=NepaliFunctions.GetDaysInBsMonth(t,s);(r+=1)>n&&(r=1,(s+=1)>12&&(s=1,t+=1)),nextDayDate=t+"-"+(s<10?"0"+s:s)+"-"+(r<10?"0"+r:r);let c=parseInt(nextDayDate.replaceAll("-","")),p=parseInt(l.replaceAll("-",""));$("#"+e).nepaliDatePicker({disableAfter:l,disableBefore:nextDayDate}),$("#"+e).on("changed change",function(){console.log(this.value);let[e,a,i]=this.value.split("-").map(Number),t=parseInt(this.value.replaceAll("-",""));console.log(e,a,i),t<c&&(this.value=nextDayDate),t>p&&(this.value=l)})}}else $("#"+e).nepaliDatePicker({disableAfter:l});$("#"+e).mask("0000-00-00"),$("#"+e).attr("placeholder","YYYY-MM-DD")}
+
 
 //end data management
 
