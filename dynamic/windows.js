@@ -1309,6 +1309,10 @@ const createIndexedDB = (dbName, storeName) => ({
 const intLen = (num) => {
     return parseInt(num.toString()).toString().length;
 };
+
+function truncate_decimals(value, decimals = 2) {
+    return (Math.floor(value * Math.pow(10, decimals)) / Math.pow(10, decimals));
+}
 //end number manipulation
 
 window.onload = function () {
