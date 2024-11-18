@@ -1305,6 +1305,12 @@ const createIndexedDB = (dbName, storeName) => ({
 });
 //end indexdb handle
 
+//XXX number manipulation 
+const intLen = (num) => {
+    return parseInt(num.toString()).toString().length;
+};
+//end number manipulation
+
 window.onload = function () {
 	const winSTR = `
 	<div class="window" id="window">
