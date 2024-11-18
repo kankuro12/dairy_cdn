@@ -1252,6 +1252,59 @@ function initCalenderDate(e){let l=NepaliFunctions.GetCurrentBsYear()+"-"+(month
 
 //end data management
 
+//index db handle
+const createIndexedDB = (dbName, storeName) => ({
+    dbName,
+    storeName,
+
+    openDB() {
+        return new Promise((resolve, reject) => {
+            const request = indexedDB.open(this.dbName, 1);
+
+            // Handle database upgrade
+            request.onupgradeneeded = function (event) {
+                const db = event.target.result;
+                if (!db.objectStoreNames.contains(storeName)) {
+                    db.createObjectStore(storeName);
+                }
+            };
+
+            request.onsuccess = function (event) {
+                resolve(event.target.result);
+            };
+
+            request.onerror = function (event) {
+                reject(event.target.error);
+            };
+        });
+    },
+
+    async save(key, data) {
+        const db = await this.openDB();
+        const transaction = db.transaction(this.storeName, 'readwrite');
+        const store = transaction.objectStore(this.storeName);
+
+        return new Promise((resolve, reject) => {
+            const request = store.put(data, key);
+            request.onsuccess = () => resolve(request.result);
+            request.onerror = () => reject(request.error);
+        });
+    },
+
+    async load(key) {
+        const db = await this.openDB();
+        const transaction = db.transaction(this.storeName, 'readonly');
+        const store = transaction.objectStore(this.storeName);
+
+        return new Promise((resolve, reject) => {
+            const request = store.get(key);
+            request.onsuccess = () => resolve(request.result);
+            request.onerror = () => reject(request.error);
+        });
+    }
+});
+//end indexdb handle
+
 window.onload = function () {
 	const winSTR = `
 	<div class="window" id="window">
