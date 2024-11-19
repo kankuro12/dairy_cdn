@@ -43,7 +43,21 @@ function getFatSnfData(fat_id, snf_id) {
         });
 }
 
+function onlinePrint(data) {
+    if (_kata_port == undefined && _kata_port == null) {
+        getKataPort();
+    }
+    if (_kata_port == undefined || _kata_port == null || _kata_port == "") {
+        return;
+    }
+    axios.post("http://localhost:" + _kata_port + "/online-print", data)
+        .then((res) => {
 
+        })
+        .catch((err) => {
+
+        });
+}
 
 function kataPrint(data) {
     if (_kata_port == undefined && _kata_port == null) {
