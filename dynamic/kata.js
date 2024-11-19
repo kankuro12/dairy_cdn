@@ -30,7 +30,7 @@ function getFatSnfData(fat_id, snf_id) {
     }
     axios.get("http://localhost:" + _kata_port + "/fat-snf")
         .then((res) => {
-            const [fat, snf] = res.data.split("|").map(number);
+            const [fat, snf] = res.data.split("|").map(Number);
             console.log(fat, snf);
             
             if (fat > 0) {
