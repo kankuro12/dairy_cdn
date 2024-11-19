@@ -41,7 +41,8 @@ function getFatSnfData(fat_id, snf_id) {
             }
         })
         .catch((err) => {
-
+            console.log(err);
+            
         });
 }
 
