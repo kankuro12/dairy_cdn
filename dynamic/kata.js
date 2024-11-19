@@ -3,7 +3,7 @@ const getKataPort = () => {
     _kata_port = localStorage.getItem('kata_port');
 }
 
-function getKataData(id) {
+function getKataData(id,callback) {
     if (_kata_port == undefined && _kata_port == null) {
         getKataPort();
     }
@@ -15,13 +15,16 @@ function getKataData(id) {
         .then((res) => {
             console.log(res.data);
             $('#' + id).val(parseFloat(res.data));
+            if (callback) {
+                callback(parseFloat(res.data));
+            }
         })
         .catch((err) => {
 
         });
 }
 
-function getFatSnfData(fat_id, snf_id) {
+function getFatSnfData(fat_id, snf_id,callback) {
     if (_kata_port == undefined && _kata_port == null) {
         getKataPort();
     }
@@ -38,6 +41,9 @@ function getFatSnfData(fat_id, snf_id) {
             }
             if (snf > 0) {
                 $('#' + snf_id).val(snf);
+            }
+            if (callback) {
+                callback(fat, snf);
             }
         })
         .catch((err) => {
