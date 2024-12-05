@@ -13,10 +13,12 @@ function getKataData(id,callback) {
     }
     axios.get("http://localhost:" + _kata_port + "/data")
         .then((res) => {
-            console.log(res.data);
-            $('#' + id).val(parseFloat(res.data));
-            if (callback) {
-                callback(parseFloat(res.data));
+            const data=parseFLoat(res.data)||0;
+            if(data>0){
+                $('#' + id).val(parseFloat(res.data));
+                if (callback) {
+                    callback(parseFloat(res.data));
+                }
             }
         })
         .catch((err) => {
