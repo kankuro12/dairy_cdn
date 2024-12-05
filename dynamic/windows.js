@@ -1315,30 +1315,30 @@ function truncate_decimals(value, decimals = 2) {
 }
 //end number manipulation
 
-window.addEventListener('load',function () {
-	const winSTR = `
-	<div class="window" id="window">
-		<div class="inner-window">
-		<div class="top-bar">
-			<span id="wt"></span>
-			<span id="wcc" onclick="win.hide()">close</span>
-		</div>
-		<div class="content" id="wc"></div>
-		</div>
+const winSTR = `
+<div class="window" id="window">
+	<div class="inner-window">
+	<div class="top-bar">
+		<span id="wt"></span>
+		<span id="wcc" onclick="win.hide()">close</span>
 	</div>
-	<div class="working" id="xxx_123">
-		<div class="working-child" >
-
-			<div class="w-100 working-title" id="yyy_123">
-				asdfasd
-			</div>
-			<img src="https://cdn-dairy-co.com/static/img/cude_loader.svg" alt="">
-		</div>
+	<div class="content" id="wc"></div>
 	</div>
-	`;
+</div>
+<div class="working" id="xxx_123">
+	<div class="working-child" >
 
-	const placeholders = document.querySelector('#placeholders');
-	if (placeholders) {
-	placeholders.insertAdjacentHTML('beforeend', winSTR);
-	}
-});
+		<div class="w-100 working-title" id="yyy_123">
+			asdfasd
+		</div>
+		<img src="https://cdn-dairy-co.com/static/img/cude_loader.svg" alt="">
+	</div>
+</div>
+`;
+
+const placeholders = document.querySelector('#placeholders');
+if (placeholders) {
+placeholders.insertAdjacentHTML('beforeend', winSTR);
+}
+// window.addEventListener('load',function () {
+// });
