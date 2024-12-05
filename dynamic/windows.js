@@ -1315,7 +1315,7 @@ function truncate_decimals(value, decimals = 2) {
 }
 //end number manipulation
 
-window.onload = function () {
+window.addEventListener('load',function () {
 	const winSTR = `
 	<div class="window" id="window">
 		<div class="inner-window">
@@ -1341,4 +1341,4 @@ window.onload = function () {
 	if (placeholders) {
 	placeholders.insertAdjacentHTML('beforeend', winSTR);
 	}
-};
+});
