@@ -1,153 +1,402 @@
 [
-    "Nepal Bank Ltd.",
-    "Agriculture Development Bank Ltd.",
-    "Nabil Bank Ltd.",
-    "Nepal Investment Bank Ltd.",
-    "Standard Chartered Bank Nepal Ltd.",
-    "Himalayan Bank Ltd.",
-    "Nepal SBI Bank Ltd.",
-    "Nepal Bangladesh Bank Ltd.",
-    "Everest Bank Ltd.",
-    "Kumari Bank Ltd.",
-    "Laxmi Bank Ltd.",
-    "Citizens Bank International Ltd.",
-    "Prime Commercial Bank Ltd.",
-    "Sunrise Bank Ltd.",
-    "Century Commercial Bank Ltd.",
-    "Sanima Bank Ltd.",
-    "Machhapuchhre Bank Ltd.",
-    "NIC Asia Bank Ltd.",
-    "Global IME Bank Ltd.",
-    "NMB Bank Ltd.",
-    "Prabhu Bank Ltd.",
-    "Siddhartha Bank Ltd.",
-    "Bank of Kathmandu Ltd.",
-    "Civil Bank Ltd.",
-    "Nepal Credit and Commerce Bank Ltd.",
-    "Janata Bank Nepal Ltd.",
-    "Rastriya Banijya Bank Ltd.",
-    "Mega Bank Nepal Ltd.",
-    "Narayani Development Bank Ltd.",
-    "Sahayogi Vikas Bank Ltd.",
-    "Karnali Bikash Bank Ltd.",
-    "Excel Development Bank Ltd.",
-    "Miteri Development Bank Ltd.",
-    "Tinau Bikas Bank Ltd.",
-    "Muktinath Bikas Bank Ltd.",
-    "Kankai Bikas Bank Ltd.",
-    "Bhargab Bikas Bank Ltd.",
-    "Corporate Development Bank Ltd.",
-    "Kabeli Bikas Bank Ltd.",
-    "Purnima Bikas Bank Ltd.",
-    "Hamro Bikas Bank Ltd.",
-    "Kanchan Development Bank Ltd.",
-    "Mission Development Bank Ltd.",
-    "Sindhu Bikas Bank Ltd.",
-    "Sahara Bikas Bank Ltd.",
-    "Nepal Community Development Bank Ltd.",
-    "Salapa Bikash Bank Ltd.",
-    "Saptakoshi Development Bank Ltd.",
-    "Green Development Bank Ltd.",
-    "Sangrila Development Bank Ltd.",
-    "Deva Development Bank Ltd.",
-    "Kailash Bikash Bank Ltd.",
-    "Shine Resunga Development Bank Ltd.",
-    "Jyoti Bikas Bank Ltd.",
-    "Garima Bikas Bank Ltd.",
-    "Om Development Bank Ltd.",
-    "Mahalaxmi Bikas Bank Ltd.",
-    "Gandaki Bikas Bank Ltd.",
-    "Lumbini Bikas Bank Ltd.",
-    "Kamana Sewa Bikas Bank Ltd.",
-    "Western Development Bank Ltd.",
-    "Nepal Finance Ltd.",
-    "Nepal Share Markets and Finance Ltd.",
-    "Goodwill Finance Ltd.",
-    "Lalitpur Finance Co. Ltd.",
-    "United Finance Co. Ltd.",
-    "Best Finance Ltd.",
-    "Progressive Finance Co. Ltd.",
-    "Janaki Finance Co. Ltd.",
-    "Pokhara Finance Ltd.",
-    "Hathway Finance Company Ltd.",
-    "Multipurpose Finance Co. Ltd.",
-    "Shrijana Finance Ltd.",
-    "World Merchant Banking & Finance Ltd.",
-    "Capital Merchant Banking & Finance Co. Ltd.",
-    "Crystal Finance Ltd.",
-    "Guheshwori Merchant Banking & Finance Ltd.",
-    "ICFC Finance Ltd.",
-    "City Express Finance Company Ltd.",
-    "Manjushree Financial Institution Ltd.",
-    "Jebil's Finance Ltd.",
-    "Synergy Finance Ltd.",
-    "Reliance Finance Ltd.",
-    "Gorkhas Finance Ltd.",
-    "Shree Investment & Finance Co. Ltd.",
-    "Central Finance Ltd.",
-    "Nirdhan Utthan Laghubitta Bittiya Sanstha Ltd.",
-    "RMDC Laghubitta Bittiya Sanstha Ltd.",
-    "Deprosc Laghubitta Bittiya Sanstha Ltd.",
-    "Chhimek Laghubitta Bittiya Sanstha Ltd.",
-    "Shawalamban Laghubitta Bittiya Sanstha Ltd.",
-    "Sana Kisan Laghubitta Bittiya Sanstha Ltd.",
-    "Nerude Laghubitta Bittiya Sanstha Ltd.",
-    "Naya Nepal Laghubitta Bittiya Sanstha Ltd.",
-    "Mithila Laghubitta Bittiya Sanstha Ltd.",
-    "Summit Microfinance Development Bank Ltd.",
-    "Sworojagar Laghubitta Bittiya Sanstha Ltd.",
-    "First Microfinance Laghubitta Bittiya Sanstha Ltd.",
-    "Nagbeli Laghubitta Bittiya Sanstha Ltd.",
-    "Kalika Microcredit Development Bank Ltd.",
-    "Mirmire Microfinance Development Bank Ltd.",
-    "Janautthan Samudayik Microfinance Development Bank Ltd.",
-    "Womi Microfinance Bittiya Sanstha Ltd.",
-    "Laxmi Microfinance Bittiya Sanstha Ltd.",
-    "Civil Laghubitta Bittiya Sanstha Ltd.",
-    "Mahila Sahayatra Microfinance Bittiya Sanstha Ltd.",
-    "Kisan Microfinance Bittiya Sanstha Ltd.",
-    "Vijaya Laghubitta Bittiya Sanstha Ltd.",
-    "NMB Microfinance Bittiya Sanstha Ltd.",
-    "FORWARD Community Microfinance Bittiya Sanstha Ltd.",
-    "Global IME Laghubitta Bittiya Sanstha Ltd.",
-    "Mahuli Samudyik Laghubitta Bittiya Sanstha Ltd.",
-    "Suryodaya Laghubitta Bitiya Sanstha Ltd.",
-    "Mero Microfinance Bittiya Sanatha Ltd.",
-    "Samata Microfinance Bittiya Sanatha Ltd.",
-    "RSDC Laghubitta Bitiya Sanstha Ltd.",
-    "Samudayik Laghubitta Bitiya Sanstha Ltd.",
-    "National Microfinance Bittiya Sanstha Ltd.",
-    "Nepal Grameen Bikas Bank Ltd.",
-    "Nepal Sewa Laghubitta Bittiya Sanstha Ltd.",
-    "Unnati Microfinance Bittiya Sanstha Ltd.",
-    "Swadeshi Lagubitta Bittiya Sanstha Ltd.",
-    "NADEP Laghubitta Bittiya Sanstha Ltd.",
-    "Support Microfinance Bittiya Sanstha Ltd.",
-    "Arambha Microfinance Bittiya Sanstha Ltd.",
-    "Janasewi Laghubitta Bittiya Sanstha Ltd.",
-    "Chautari Laghubitta Bittiya Sanstha Ltd.",
-    "Ghodighoda Laghubitta Bittiya Sanstha Ltd.",
-    "Asha Laghu Bitta Bittiya Sastha Ltd.",
-    "Nepal Agro Microfinance Bittiya Sastha Ltd.",
-    "Rama Roshan Microfinance Bittiya Sastha Ltd.",
-    "Creative LaghuBitta Bittiya Sastha Ltd.",
-    "Gurans LaghuBitta Bittiya Sastha Ltd.",
-    "Ganapati Microfinance Bittiya Sastha Ltd.",
-    "Infinity Microfinance Bittiya Sanstha Ltd.",
-    "Adhikhola Laghubitta Bittiya Sanstha Ltd.",
-    "SwabhimanMicrofinance Bittiya Sanstha Ltd.",
-    "Sparsha Laghubitta Bittiya Sanstha Ltd.",
-    "Sabaiko Laghubitta Bittiya Sanstha Ltd.",
-    "Arthik Samriddhi Laghubitta Bittiya Sanstha Ltd.",
-    "Sadhana Laghubitta Bittiya Sanstha Ltd.",
-    "NIC Asia Laghubitta Bittiya Sanstha Ltd.",
-    "Sarathi Laghubitta Bittiya Sanstha Ltd.",
-    "Nagarik Laghubitta Bittiya Sanstha Ltd.",
-    "Trilok Laghubitta Bittiya Sanstha Ltd.",
-    "Manakamana Laghubitta Bittiya Sanstha Ltd.",
-    "Sahakarya Laghubitta Bittiya Sanstha Ltd.",
-    "Sajeelo Laghu Bitta Bittiya Sanstha Ltd.",
-    "Satyawati Laghubitta Bittiya Sanstha Ltd.",
-    "Buddha Jyoti Laghubitta Bittiya Sanstha Ltd.",
-    "Samaj Laghubitta Bittiya Sanstha Ltd."
+    [
+        "001",
+        "Nepal Bank Ltd."
+    ],
+    [
+        "002",
+        "Agriculture Development Bank Ltd."
+    ],
+    [
+        "003",
+        "Nabil Bank Ltd."
+    ],
+    [
+        "004",
+        "Nepal Investment Bank Ltd."
+    ],
+    [
+        "005",
+        "Standard Chartered Bank Nepal Ltd."
+    ],
+    [
+        "006",
+        "Himalayan Bank Ltd."
+    ],
+    [
+        "007",
+        "Nepal SBI Bank Ltd."
+    ],
+    [
+        "008",
+        "Nepal Bangladesh Bank Ltd."
+    ],
+    [
+        "009",
+        "Everest Bank Ltd."
+    ],
+    [
+        "010",
+        "Kumari Bank Ltd."
+    ],
+    [
+        "011",
+        "Laxmi Bank Ltd."
+    ],
+    [
+        "012",
+        "Citizens Bank International Ltd."
+    ],
+    [
+        "013",
+        "Prime Commercial Bank Ltd."
+    ],
+    [
+        "014",
+        "Sunrise Bank Ltd."
+    ],
+    [
+        "015",
+        "Century Commercial Bank Ltd."
+    ],
+    [
+        "016",
+        "Sanima Bank Ltd."
+    ],
+    [
+        "017",
+        "Machhapuchhre Bank Ltd."
+    ],
+    [
+        "018",
+        "NIC Asia Bank Ltd."
+    ],
+    [
+        "019",
+        "Global IME Bank Ltd."
+    ],
+    [
+        "020",
+        "NMB Bank Ltd."
+    ],
+    [
+        "021",
+        "Prabhu Bank Ltd."
+    ],
+    [
+        "022",
+        "Siddhartha Bank Ltd."
+    ],
+    [
+        "023",
+        "Bank of Kathmandu Ltd."
+    ],
+    [
+        "024",
+        "Civil Bank Ltd."
+    ],
+    [
+        "025",
+        "Nepal Credit and Commerce Bank Ltd."
+    ],
+    [
+        "026",
+        "Janata Bank Nepal Ltd."
+    ],
+    [
+        "027",
+        "Rastriya Banijya Bank Ltd."
+    ],
+    [
+        "028",
+        "Mega Bank Nepal Ltd."
+    ],
+    [
+        "029",
+        "Narayani Development Bank Ltd."
+    ],
+    [
+        "030",
+        "Sahayogi Vikas Bank Ltd."
+    ],
+    [
+        "031",
+        "Karnali Bikash Bank Ltd."
+    ],
+    [
+        "032",
+        "Excel Development Bank Ltd."
+    ],
+    [
+        "033",
+        "Miteri Development Bank Ltd."
+    ],
+    [
+        "034",
+        "Tinau Bikas Bank Ltd."
+    ],
+    [
+        "035",
+        "Muktinath Bikas Bank Ltd."
+    ],
+    [
+        "036",
+        "Kankai Bikas Bank Ltd."
+    ],
+    [
+        "037",
+        "Bhargab Bikas Bank Ltd."
+    ],
+    [
+        "038",
+        "Corporate Development Bank Ltd."
+    ],
+    [
+        "039",
+        "Kabeli Bikas Bank Ltd."
+    ],
+    [
+        "040",
+        "Purnima Bikas Bank Ltd."
+    ],
+    [
+        "041",
+        "Hamro Bikas Bank Ltd."
+    ],
+    [
+        "042",
+        "Kanchan Development Bank Ltd."
+    ],
+    [
+        "043",
+        "Mission Development Bank Ltd."
+    ],
+    [
+        "044",
+        "Sindhu Bikas Bank Ltd."
+    ],
+    [
+        "045",
+        "Sahara Bikas Bank Ltd."
+    ],
+    [
+        "046",
+        "Nepal Community Development Bank Ltd."
+    ],
+    [
+        "047",
+        "Salapa Bikash Bank Ltd."
+    ],
+    [
+        "048",
+        "Saptakoshi Development Bank Ltd."
+    ],
+    [
+        "049",
+        "Green Development Bank Ltd."
+    ],
+    [
+        "050",
+        "Sangrila Development Bank Ltd."
+    ],
+    [
+        "051",
+        "Deva Development Bank Ltd."
+    ],
+    [
+        "052",
+        "Kailash Bikash Bank Ltd."
+    ],
+    [
+        "053",
+        "Shine Resunga Development Bank Ltd."
+    ],
+    [
+        "054",
+        "Jyoti Bikas Bank Ltd."
+    ],
+    [
+        "055",
+        "Garima Bikas Bank Ltd."
+    ],
+    [
+        "056",
+        "Om Development Bank Ltd."
+    ],
+    [
+        "057",
+        "Mahalaxmi Bikas Bank Ltd."
+    ],
+    [
+        "058",
+        "Gandaki Bikas Bank Ltd."
+    ],
+    [
+        "059",
+        "Lumbini Bikas Bank Ltd."
+    ],
+    [
+        "060",
+        "Kamana Sewa Bikas Bank Ltd."
+    ],
+    [
+        "061",
+        "Western Development Bank Ltd."
+    ],
+    [
+        "062",
+        "Nepal Finance Ltd."
+    ],
+    [
+        "063",
+        "Nepal Share Markets and Finance Ltd."
+    ],
+    [
+        "064",
+        "Goodwill Finance Ltd."
+    ],
+    [
+        "065",
+        "Lalitpur Finance Co. Ltd."
+    ],
+    [
+        "066",
+        "United Finance Co. Ltd."
+    ],
+    [
+        "067",
+        "Best Finance Ltd."
+    ],
+    [
+        "068",
+        "Progressive Finance Co. Ltd."
+    ],
+    [
+        "069",
+        "Janaki Finance Co. Ltd."
+    ],
+    [
+        "070",
+        "Pokhara Finance Ltd."
+    ],
+    [
+        "071",
+        "Hathway Finance Company Ltd."
+    ],
+    [
+        "072",
+        "Multipurpose Finance Co. Ltd."
+    ],
+    [
+        "073",
+        "Shrijana Finance Ltd."
+    ],
+    [
+        "074",
+        "World Merchant Banking & Finance Ltd."
+    ],
+    [
+        "075",
+        "Capital Merchant Banking & Finance Co. Ltd."
+    ],
+    [
+        "076",
+        "Crystal Finance Ltd."
+    ],
+    [
+        "077",
+        "Guheshwori Merchant Banking & Finance Ltd."
+    ],
+    [
+        "078",
+        "ICFC Finance Ltd."
+    ],
+    [
+        "079",
+        "City Express Finance Company Ltd."
+    ],
+    [
+        "080",
+        "Manjushree Financial Institution Ltd."
+    ],
+    [
+        "081",
+        "Jebil's Finance Ltd."
+    ],
+    [
+        "082",
+        "Synergy Finance Ltd."
+    ],
+    [
+        "083",
+        "Reliance Finance Ltd."
+    ],
+    [
+        "084",
+        "Gorkhas Finance Ltd."
+    ],
+    [
+        "085",
+        "Shree Investment & Finance Co. Ltd."
+    ],
+    [
+        "086",
+        "Central Finance Ltd."
+    ],
+    [
+        "087",
+        "Nirdhan Utthan Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "088",
+        "RMDC Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "089",
+        "Deprosc Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "090",
+        "Chhimek Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "091",
+        "Shawalamban Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "092",
+        "Sana Kisan Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "093",
+        "Nerude Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "094",
+        "Naya Nepal Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "095",
+        "Mithila Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "096",
+        "Summit Microfinance Development Bank Ltd."
+    ],
+    [
+        "097",
+        "Sworojagar Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "098",
+        "First Microfinance Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "099",
+        "Nagbeli Laghubitta Bittiya Sanstha Ltd."
+    ],
+    [
+        "100",
+        "Kalika Microcredit Development Bank Ltd."
+    ]
 ]
