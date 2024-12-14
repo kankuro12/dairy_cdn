@@ -6,12 +6,15 @@ var xpayLoad = false;
 function xpayMethodChange(ele) {
     if (ele.value == 2) {
         $('#xpay_bank_holder').show();
+        $('#xpay_bank_cheque_holder').show();
         $('#xpay_custom_holder').hide();
     } else if (ele.value == 3) {
         $('#xpay_bank_holder').hide();
+        $('#xpay_bank_cheque_holder').hide();
         $('#xpay_custom_holder').show();
     } else {
         $('#xpay_bank_holder').hide();
+        $('#xpay_bank_cheque_holder').hide();
         $('#xpay_custom_holder').hide();
     }
 }

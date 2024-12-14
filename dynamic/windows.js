@@ -825,12 +825,15 @@ var xpayLoad = false;
 function xpayMethodChange(ele) {
     if (ele.value == 2) {
         $('#xpay_bank_holder').show();
+        $('#xpay_bank_cheque_holder').show();
         $('#xpay_custom_holder').hide();
     } else if (ele.value == 3) {
         $('#xpay_bank_holder').hide();
+        $('#xpay_bank_cheque_holder').hide();
         $('#xpay_custom_holder').show();
     } else {
         $('#xpay_bank_holder').hide();
+        $('#xpay_bank_cheque_holder').hide();
         $('#xpay_custom_holder').hide();
     }
 }
@@ -846,16 +849,22 @@ function xpayCustomBank(ele, id) {
         if (exists('#xpay_custom_bank_' + id)) {
             $('#xpay_custom_bank_amount_' + id).remove();
             $('#xpay_custom_bank_' + id).remove();
+            $('#xpay_custom_bank_cheque' + id).remove();
+            $('#xpay_custom_cheque_' + id).hide();
         }
     } else {
         if (!exists('#xpay_custom_bank_' + id)) {
+			const xx_cheque_no= $('#xpay_custom_cheque_' + id).val()??"";
             const ele = `<input type="hidden" class="xpay_custom_bank" name="xpay_custom_bank[]" id="xpay_custom_bank_${id}" value="${id}">
                 <input type="hidden" class="xpay_custom_bank_amount" name="xpay_custom_bank_amount_${id}" id="xpay_custom_bank_amount_${id}" value="${id}" value="${amount}">
+                <input type="hidden" class="xpay_custom_bank_cheque" name="xpay_custom_bank_cheque_${id}" id="xpay_custom_bank_cheque_${id}" value="${id}" value="${xx_cheque_no}">
                  `;
             $('#xpay_custom_banks_holder').append(ele);
         } else {
             $('#xpay_custom_bank_amount_' + id).val(amount).change();
         }
+
+		$('#xpay_custom_cheque_' + id).show();
     }
 }
 
@@ -979,12 +988,14 @@ function loadXPay(data) {
         data.xpay_method = $('#xpay_method').val();
         data.xpay = $('#xpay').val();
         data.xpay_bank = $('#xpay_bank').val();
+        data.xpay_cheque = $('#xpay_cheque').val();
         if (data.xpay_method == 3) {
             data.xpay_custom_bank = [];
             $('.xpay_custom_bank').each(function (index, element) {
                 const bank_id = $(element).val();
                 data.xpay_custom_bank.push(bank_id);
                 data['xpay_custom_bank_amount_' + bank_id] = $('#xpay_custom_bank_amount_' + bank_id).val();
+                data['xpay_custom_bank_cheque_' + bank_id] = $('#xpay_custom_bank_cheque_' + bank_id).val()??'';
                 data.xpay_custom_cash = $('#xpay_custom_cash').val();
             });
         }
