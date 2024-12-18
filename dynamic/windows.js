@@ -1326,6 +1326,26 @@ function truncate_decimals(value, decimals = 2) {
 }
 //end number manipulation
 
+//XXXCheque Management
+async function loadBanks() {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let banks = JSON.parse(localStorage.getItem('global_bank_data') ?? '[]');
+            if (banks.length === 0) {
+                const res = await axios.get("https://cdn-dairy-co.com/static/banks.json");
+                banks = res.data;
+                localStorage.setItem('global_bank_data', JSON.stringify(banks));
+            }
+            resolve(banks); // Resolve the promise with banks data
+        } catch (error) {
+            console.error(error);
+            reject(error); // Reject the promise in case of error
+        }
+    });
+}
+
+//XXX
+
 const winSTR = `
 <div class="window" id="window">
 	<div class="inner-window">
